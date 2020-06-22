@@ -12,11 +12,24 @@
 // f(["foo", -1]) // ""
 
 function repeat(arr) {
-  // Your code here
+  if (arr[1] > 0 && typeof arr[0] === "string") {
+    return `${arr[0].repeat(arr[1])}`;
+  } else if (arr[1] < 1) {
+    return "";
+  } else {
+    return undefined;
+  }
 }
 
 // We need 7 test cases.
 // Don't forget to test all of the question parameters
+expect(repeat(["foo", 3]), "foofoofoo");
+expect(repeat(["fo", 3]), "fofofo");
+expect(repeat(["foo", -1]), "");
+expect(repeat(["foo", 0]), "");
+expect(repeat(["hi", 10]), "hihihihihihihihihihi");
+expect(repeat([4, 3]), undefined);
+expect(repeat(["foo", "red"]), undefined);
 
 /**
  * -------------------------------------------------------------------
@@ -25,7 +38,7 @@ function repeat(arr) {
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
     console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
