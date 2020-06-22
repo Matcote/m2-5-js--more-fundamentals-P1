@@ -28,6 +28,11 @@ addAllArguments(3, 5, 2, 11, -5); // Should return 16
 const addAllArguments = (...nums) => {
   console.log(nums); // Is an array of all arguments
   // return the sum of ALL arguments
+  let sum = 0;
+  nums.forEach((num) => {
+    sum += num;
+  });
+  return sum;
 };
 
 addAllArguments(3, 5); // Should return 8
@@ -60,6 +65,9 @@ You can use it to copy an array:
 let arr1 = [1, 2, 3];
 
 let copyArr = [...arr1];
+//^ this copies each value into the new array, creating a copy that does not change with the original.
+//let copyArr = arr1;
+//^this just tells copyArr to reference arr1, meaning if arr1 changes, then so does copyArr
 ```
 
 ---
