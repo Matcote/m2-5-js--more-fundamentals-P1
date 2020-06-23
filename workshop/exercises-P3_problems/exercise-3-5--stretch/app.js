@@ -24,3 +24,4 @@ function addCells(num1, num2) {
   }
 }
 addCells(rows, cols);
+//didnt finish
